@@ -1,0 +1,32 @@
+form {
+    background-color: var(--secondary-bg-color);
+    margin: 0 auto;
+    padding: 2ch 3ch;
+    overflow: hidden;
+    width: 60ch;
+}
+
+form input {
+    display: block;
+    font-size: 1.2em;
+    margin: 0.5em auto;
+    width: 80%;
+}
+
+form input[type=submit] {
+    background-color: var(--secondary-text-color);
+    border-radius: 10px;
+    color: var(--main-text-color);
+    padding: 3px 1em;
+    width: fit-content;
+}
+
+form a,
+form a:visited {
+    color: var(--secondary-text-color);
+    float: right;
+}
+
+form h1 {
+    color: var(--secondary-text-color);
+}

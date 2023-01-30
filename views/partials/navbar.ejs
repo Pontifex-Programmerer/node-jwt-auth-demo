@@ -1,0 +1,19 @@
+
+<nav class="navbar">
+    <div class="logo">
+        <h1>
+            <% if(typeof(user) !== 'undefined' && user) {%>
+                <%= user.username %>
+            <% } else { %>
+                This site is friendly to users only!
+            <% } %>
+        </h1>
+    </div>
+    <ul>
+        <% if(typeof(user) !== 'undefined' && user) {%>
+            <a href="/logout"><li>Log out!</li></a>
+        <% } else { %> 
+            <a href="/login"><li>Log in!</li></a>
+        <% } %>
+    </ul>
+</nav>

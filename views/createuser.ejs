@@ -1,0 +1,12 @@
+<%-include('./partials/header')%>
+    <script src="/JS/createuser.js" defer></script>
+    <script src="/JS/login.js" defer></script>
+    
+    <form action="/createuser" method="post">
+        <h1>Register your credentials!</h1>
+        <input type="text" name="username" id="username" placeholder="username">
+        <input type="password" name="password" id="password" placeholder="password">
+        <input type="password" name="password2" id="password2" placeholder="repeat password">
+        <input type="submit" value="Create User!">
+    </form>
+<%-include('./partials/footer')%>
