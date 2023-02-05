@@ -6,7 +6,6 @@ const authenticate = async (req, res, next) => {
     console.log('trying to authenticate');
     const {username, password} = req.body;
     if(username && password){
-        console.log(`username: ${username} password: ${password}`);
         const user = await User.login(username, password);
         if(user){
             const token = jwt.sign({userId: user._id}, process.env.JWTSECRET, {expiresIn: 24*60*60*1000});

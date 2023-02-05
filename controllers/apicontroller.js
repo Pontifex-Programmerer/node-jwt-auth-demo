@@ -10,7 +10,7 @@ const User = require('../models/User');
  * object
  */
 const createuser = async (req, res) => {
-    const {username, password, password2} = req.body;
+    const {username, password} = req.body;
     let error = false;
     let result = null;
     
@@ -24,10 +24,11 @@ const createuser = async (req, res) => {
 
     }
     
+    url = '/secretpage';
     // responds either with an error, or with a user. Result 
     // should be null if an error has occurred.
     res.json({
-        error, result
+        error, result, url
     });
 }
 

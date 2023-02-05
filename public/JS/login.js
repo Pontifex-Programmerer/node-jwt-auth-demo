@@ -15,9 +15,9 @@ loginform.addEventListener('submit', async e => {
                     }),
                 headers: {'Content-Type': 'application/json'}
             });
-            if(result){
-                window.open(result.url, '_self');
-            }
+        if(result){
+            window.open(result.url, '_self');
+        }
     }catch(err){
         console.log(err);
     }
