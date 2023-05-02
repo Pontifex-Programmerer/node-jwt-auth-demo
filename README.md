@@ -9,6 +9,7 @@ To deploy the site you must create **.env** file containing the following keys;
 * DBURI=[*your mongodbpath here*]
 * BCRYPTSECRET=[*your bcrypt secret key for hashing passwords here..*]
 * RUNNINGPORT=[PORT]
+* DBCONNECTION
 
 # .gitignore
 
