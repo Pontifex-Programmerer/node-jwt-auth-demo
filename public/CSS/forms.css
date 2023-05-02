@@ -30,3 +30,12 @@ form a:visited {
 form h1 {
     color: var(--secondary-text-color);
 }
+
+.errorfield {
+    background-color: var(--alarm-bg-color);
+    color: var(--alarm-text-color);
+    padding: 1ch;
+    margin: 0 auto;
+    text-align: center;
+    width:fit-content;
+}

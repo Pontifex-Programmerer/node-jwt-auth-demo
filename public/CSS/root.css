@@ -6,6 +6,8 @@ for any page on this site. */
     --main-text-color: rgb(58, 40, 0);
     --secondary-bg-color: rgb(1, 28, 1);
     --secondary-text-color: rgb(98, 255, 122);
+    --alarm-bg-color: rgb(239, 79, 135);
+    --alarm-text-color: rgb(209, 250, 202);
     
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--main-bg-color);

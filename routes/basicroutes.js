@@ -14,8 +14,8 @@ router.get('/login', defaultController.login);
 
 router.post('/login', authenticationController.authenticate)
 
-router.get('/createuserform', defaultController.createuserform);
+router.get('/createuser', defaultController.createuserform);
 
-router.post('/createuser', api.createuser);
+router.post('/createuser', authenticationController.createuser);
 
 module.exports = router;

@@ -29,8 +29,6 @@ userschema.pre('save', async function(next){
 
 
 // This methodis always called after the save method is completed
-// it would be a great place to redirect new users to a welcome-
-// page
 userschema.post('save', async function(doc, next){
 
     next();

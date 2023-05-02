@@ -21,4 +21,26 @@ const authenticate = async (req, res, next) => {
     
 }
 
-module.exports = {authenticate};
+const createuser = async (req, res, next) => {
+    const {username, password} = req.body;
+    let error = false;
+    let result = null;
+    
+    // Try catch is a way of handling errors that might happen
+    // beyond the scope of your own actions, such as system 
+    // errors, network disruptions or API request errors
+    try {
+        result = await User.create({username, password});
+        if(result){
+            authenticate(req, res);
+        }
+    } catch(err) {
+        error = err;
+        res.render('createuser', 
+        {
+            errormessage: "Could not create user, check username and password!"
+        });
+    }
+}
+
+module.exports = {authenticate, createuser};
