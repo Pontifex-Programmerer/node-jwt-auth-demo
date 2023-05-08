@@ -2,17 +2,17 @@ const router = require('express').Router();
 
 
 //Controllers for default routes
-const defaultController = require('../controllers/defaultController');
-const authenticationController = require('../controllers/authenticationController');
+const {index, login, createuserform} = require('../controllers/defaultController');
+const {authenticate, createuser} = require('../controllers/authenticationController');
 
-router.get('/', defaultController.index);
+router.get('/', index);
 
-router.get('/login', defaultController.login);
+router.get('/login', login);
 
-router.post('/login', authenticationController.authenticate)
+router.post('/login', authenticate)
 
-router.get('/createuser', defaultController.createuserform);
+router.get('/createuser', createuserform);
 
-router.post('/createuser', authenticationController.createuser);
+router.post('/createuser', createuser);
 
 module.exports = router;

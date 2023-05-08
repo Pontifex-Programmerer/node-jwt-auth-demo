@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-let connections = null;
 
 function connectToDB(DBSTRING){
+    let connections = null;
     mongoose.set('strictQuery', false);
     mongoose.connect(DBSTRING)
         .then(result => {
-            connections = result.connections;
-            result.connections.forEach(connection => {
+                connections = result.connections;
+                result.connections.forEach(connection => {
                 console.log(`connected to ${connection.name}`)
             });
         })   
