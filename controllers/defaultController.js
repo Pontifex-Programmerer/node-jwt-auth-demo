@@ -23,5 +23,6 @@ module.exports = {
     index,
     login,
     logout,
-    createuserform}
+    createuserform
+}
 

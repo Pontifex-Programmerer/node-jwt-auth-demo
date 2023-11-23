@@ -43,4 +43,8 @@ const createuser = async (req, res, next) => {
     }
 }
 
-module.exports = {authenticate, createuser};
+const notauthorized = async (req, res, next) => {
+    console.log('not authorized was called')
+    res.render('notauthorized');
+}
+module.exports = {authenticate, createuser, notauthorized};

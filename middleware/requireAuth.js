@@ -5,16 +5,18 @@ const requireAuth = (req, res, next) => {
     if(req.cookies && req.cookies.jwt){
         const token = req.cookies.jwt;
         if(token){
+            console.log('got token!', token)
             jwt.verify(token, process.env.JWTSECRET, async (err, decodedtoken) => {
                 if(err){
                     // Token not valid - could be tampering, but also corruption
+                    console.log(`token not accepted: ${err.message}` );
+                    res.status(401).redirect('notauthorized');
                 } else {
                     const user = await User.findById(decodedtoken.userId);
                     res.locals.user = user;
                     next();
                 }
             })
-            console.log('got token!', token)
         }
     } else {
         res.redirect('/login')
