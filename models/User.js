@@ -45,8 +45,9 @@ userschema.statics.login = async function (username, password){
         if(auth) {
             return user;
         }
+    } else {
+        throw Error('Credentials could not be validated. Wrong username or password!');
     }
-    throw Error('Credentials could not be validated. Wrong username or password!');
 }
 
 // Finally we create and export the User model by passing the userschema and
