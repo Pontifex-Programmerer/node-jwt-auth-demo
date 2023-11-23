@@ -40,10 +40,11 @@ userschema.post('save', async function(doc, next){
 userschema.statics.login = async function (username, password){
     const user = await this.findOne({username});
     if(user){
-        console.log('found user', user.password)
         const auth = await bcrypt.compare(password, user.password);
         if(auth) {
             return user;
+        } else {
+            throw Error('Wrong password!');
         }
     } else {
         throw Error('Credentials could not be validated. Wrong username or password!');
